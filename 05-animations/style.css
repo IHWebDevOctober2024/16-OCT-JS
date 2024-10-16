@@ -1,0 +1,78 @@
+:root {
+  --primary-color: rgb(249, 190, 190);
+}
+
+#first-button {
+  background-color: blue;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: none;
+  transition: background-color 300ms, transform 3s;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+#first-button:hover {
+  background-color: rgb(0, 0, 111);
+  cursor: pointer;
+  transform: scale(1.2) rotate(10deg);
+}
+
+#first-square {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(black, red);
+  animation: rotate 1s infinite linear;
+}
+
+#popup {
+  width: 800px;
+  height: 300px;
+  border-radius: 30px;
+  background-color: var(--primary-color);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  align-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  animation: slide-in 1s linear;
+}
+
+#popup-background {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(255, 255, 255, 0.552);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-50%) translateY(-500%);
+  }
+  33% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  66% {
+    transform: translateX(-50%) translateY(-80%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
